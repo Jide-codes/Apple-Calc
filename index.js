@@ -1,19 +1,116 @@
-function mult(a, b){
+const keys = document.querySelectorAll('.key')
+const display = document.querySelector('.display')
+const equals = document.querySelector('.equals')
+const operators = document.querySelectorAll('.operator')
+const negative = document.querySelector('.negative')
+const percentage = document.querySelectorAll('.operator')
+
+let firstValue = " "
+let isFirstValue = false
+let secondValue = " "
+let isSecondValue = false
+let operator = " "
+let displayValue = 0
+
+
+// for (let key of keys) {
+//     keys[key].addEventListener('click', function (event) {
+//         let value = event.target.getAttribute('data-details')
+//         if(isFirstValue === 'false') {
+//             getFirstValue(value)
+//         }
+//         if (isSecondValue === false) {
+//             getSecondValue(value)
+//         }
+//     } )
+// }
+
+for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener('click', function (event) {
+        let value = event.target.getAttribute('data-details')
+        if (isFirstValue === false) {
+            getFirstValue(value)
+        }
+        if (isSecondValue === false) {
+            getSecondValue(value)
+        }
+   
+ })
+        
+} 
+
+function getFirstValue(valueEl) {
+    display.textContent = " "
+    firstValue += valueEl
+    display.textContent = firstValue
+    firstValue = +firstValue
+   
+}
+
+function getSecondValue(valueEl) {
+    if (firstValue != " " && operator != " ") {
+        secondValue += valueEl
+        display.textContent = secondValue
+        secondValue = +secondValue
+     
+    }
+}
+
+function getSign() {
+    for (let key = 0; key < operators.length; key++) {
+        operators[key].addEventListener('click', function (event) {
+            operator = event.target.getAttribute('data-details')
+            isFirstValue = true
+        })
+    }
+}
+getSign()
+
+
+equals.addEventListener('click', function () {
+    display.textContent = ""
+    if (operator === "+") {
+        displayValue = addition(firstValue, secondValue)
+    } else if (operator === "-") {
+        displayValue = subtraction(firstValue, secondValue)
+    } else if (operator === "*") {
+        displayValue = multiplication(firstValue, secondValue)
+    } else if (operator === "/") {
+        displayValue = division(firstValue, secondValue)
+    }
+    display.textContent = displayValue
+    firstValue = displayValue
+    secondValue = " "
+})
+
+function checkResultLength() {
+    displayValue = JSON.stringify(displayValue)
+    if (displayValue.length >= 8) {
+        displayValue = JSON.parse(displayValue)
+        display.textContent = displayValue.toFixed(5)
+    }
+}
+
+negative.addEventListener('click' function () {
+    
+})
+
+function multiplication(a, b) {
     const answer = a * b;
     return answer;
 }
 
-function subt(a, b) {
+function subtraction(a, b) {
     const answer = a - b;
     return answer;
 }
 
-function addit(a, b) {
+function addition(a, b) {
     const answer = a + b;
     return answer; 
 }
 
-function divi(a, b) {
+function division(a, b) {
     const answer = a / b;
     // const decimalIndex = answer.toString();
     // const indexOfDecimal = decimalIndex.indexOf(".");
@@ -55,21 +152,26 @@ function perc(a) {
     return answer;
 }
 
-function calc(a, b, params) {
-    if (params === mult) {
-        return mult(a, b);
-    } else if(params === subt){
-        return subt(a, b);
-    } else if(params === addit){
-        return addit(a, b);
-    } else if(params === divi){
-        return divi(a, b);
-    } else if(params === perc){
-        return perc(a);
-    }else {
-       return "Non Valid Input" 
-    } 
-}
+// function calc(a, b, params) {
+//     if (params === mult) {
+//         return mult(a, b);
+//     } else if(params === subt){
+//         return subt(a, b);
+//     } else if(params === addit){
+//         return addit(a, b);
+//     } else if(params === divi){
+//         return divi(a, b);
+//     } else if(params === perc){
+//         return perc(a);
+//     }else {
+//        return "Non Valid Input" 
+//     } 
+// }
 
+<<<<<<< HEAD
 currentResult = calc(10,5, perc);
 console.log(currentResult)
+=======
+// currentResult = calc(10, 2, perc);
+// console.log(currentResult)
+>>>>>>> 66f357e03cf0c568a875bf4441475cc502900def
