@@ -34,7 +34,7 @@ function divi(a, b) {
     return answer;
 }
 
-function perc(a, b) {
+function perc(a) {
     const answer = a / 100;
     // const decimalIndex = answer.toString();
     // const indexOfDecimal = decimalIndex.indexOf(".");
@@ -71,5 +71,5 @@ function calc(a, b, params) {
     } 
 }
 
-currentResult = calc(10, 2, perc);
+currentResult = calc(10,5, perc);
 console.log(currentResult)
