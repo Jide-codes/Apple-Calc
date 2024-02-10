@@ -92,7 +92,7 @@ function checkResultLength() {
 }
 
 negative.addEventListener('click', function() {
-    
+
 })
 
 function multiplication(a, b) {
