@@ -203,10 +203,5 @@ function perc(a) {
 //     } 
 // }
 
-<<<<<<< HEAD
-currentResult = calc(10,5, perc);
-console.log(currentResult)
-=======
 // currentResult = calc(10, 2, perc);
 // console.log(currentResult)
->>>>>>> 66f357e03cf0c568a875bf4441475cc502900def
