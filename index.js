@@ -3,8 +3,7 @@ const display = document.querySelector('.display')
 const equals = document.querySelector('.equals')
 const operators = document.querySelectorAll('.operator')
 const negative = document.querySelector('.negative')
-const percentage = document.querySelector('.percentage')
-const clear = document.querySelector('.clear')
+const percentage = document.querySelectorAll('.operator')
 
 let firstValue = " "
 let isFirstValue = false
@@ -92,42 +91,8 @@ function checkResultLength() {
     }
 }
 
-negative.addEventListener('click', function () {
-    display.textContent = ""
-    if (firstValue != ' ') {
-        displayValue = -firstValue
-        firstValue = displayValue
-    }
-        if (firstValue != '' && secondValue != '' && operator != '') {
-            displayValue = -displayValue
-        }
-            display.textContent = displayValue
-     
-    
-})
+negative.addEventListener('click', function() {
 
-percentage.addEventListener('click', function () {
-    display.textContent = " "
-    if (firstValue != " ") {
-        displayValue = firstValue / 100
-        firstValue = displayValue
-    }
-    if (firstValue != ' ' && secondValue != ' ' && operator != ' ') {
-        displayValue = displayValue/100
-    }
-    display.textContent = displayValue
-})
-
-
-clear.addEventListener('click', function () {
-    display.textContent = ''
-
-    firstValue = ""
-    isFirstValue = false
-    secondValue = ""
-    isSecondValue = ""
-    operator = ""
-    displayValue = 0
 })
 
 function multiplication(a, b) {

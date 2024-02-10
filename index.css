@@ -1,0 +1,198 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.main-container {
+    background-color: black;
+    min-height: 90%;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 5px 3px;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    font-weight: normal;
+    font-size: 0.5em;
+    padding-top: 2px;
+}
+
+.header-time {
+    margin-right: auto;
+    margin-left: 5px;
+    background-color: green;
+    border-radius: 6px 6px;
+    padding: 2px 7px;
+}
+
+.header-right {
+    display: flex;
+}
+
+.fa-solid {
+    margin: 0 2.5px;
+}
+
+
+.fa-battery-three-quarters {
+    font-size: 1.2em;
+}
+
+.sub-body {
+    margin: 180px 0 5px 0;
+    font-size: 2em;
+    text-align: right;
+    font-weight: normal;
+}
+
+.top-buttons {
+    padding: 10px 0 5px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.normal-buttons {
+    width: 20%;
+    margin: 3px;
+    border-radius: 50%;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.ash {
+    background-color: rgb(149, 146, 146);
+    color: black
+}
+
+.yellow {
+    background-color: orange;
+}
+
+.gray {
+    background-color: rgb(43, 43, 43);
+}
+
+.down-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    padding: 0 2px;
+}
+
+.big-button {
+    width: 45%;
+    padding: 20px 10px 10px 8%;
+    text-align: left;
+    margin: 3px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.yellow:hover {
+    background-color: white;
+    color: orange;
+    transition: 0.4s ease-in-out;
+}
+
+.yellow:focus {
+    background-color: white;
+    color: orange;
+    /* transition: 3s ease-in-out; */ 
+}
+
+.normal-buttons:hover {
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+}
+
+.big-button:hover {
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+.swipe-button {
+    border-radius: 2px 2px;
+    height: 3px;
+    margin: 40px 30% 5px;
+    padding: 2px;
+    border-bottom: 3px solid white;
+}
+
+@media screen and (max-width: 1450px) {
+    .main-container {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .main-container {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .main-container {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .main-container {
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .main-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .main-container {
+        width: 90%;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .main-container {
+        width: 100%;
+    }
+}
+
+
