@@ -3,7 +3,8 @@ const display = document.querySelector('.display')
 const equals = document.querySelector('.equals')
 const operators = document.querySelectorAll('.operator')
 const negative = document.querySelector('.negative')
-const percentage = document.querySelectorAll('.operator')
+const percentage = document.querySelector('.percent')
+const clear = document.querySelector('.clear')
 
 let firstValue = " "
 let isFirstValue = false
@@ -12,18 +13,6 @@ let isSecondValue = false
 let operator = " "
 let displayValue = 0
 
-
-// for (let key of keys) {
-//     keys[key].addEventListener('click', function (event) {
-//         let value = event.target.getAttribute('data-details')
-//         if(isFirstValue === 'false') {
-//             getFirstValue(value)
-//         }
-//         if (isSecondValue === false) {
-//             getSecondValue(value)
-//         }
-//     } )
-// }
 
 for (let i = 0; i < keys.length; i++) {
     keys[i].addEventListener('click', function (event) {
@@ -81,6 +70,8 @@ equals.addEventListener('click', function () {
     display.textContent = displayValue
     firstValue = displayValue
     secondValue = " "
+
+    checkResultLength()
 })
 
 function checkResultLength() {
@@ -89,11 +80,57 @@ function checkResultLength() {
         displayValue = JSON.parse(displayValue)
         display.textContent = displayValue.toFixed(5)
     }
+    // if (displayValue.length >= 4) {
+    //     const position = displayValue.length - 3
+    //     const formattedDisplay = displayValue.slice(0, position) + ',' + displayValue.slice(position)
+
+    //     display.textContent = formattedDisplay
+    // }
+    const commasPosition = Math.floor((displayValue.length - 1) / 3)
+
+    let formattedDisplay = displayValue
+    for (let i = 1; i <= commasPosition; i++){
+        const position = displayValue.length - i * 3
+        formattedDisplay = formattedDisplay.slice(0, position) + ',' + formattedDisplay.slice(position)
+    }
+    display.textContent = formattedDisplay
+
 }
 
 negative.addEventListener('click', function() {
+    display.textContent = ''
+    if (firstValue != "") {
+        displayValue = -firstValue
+        firstValue = displayValue
+    }
+    // if (firstValue != "" && secondValue != "" &&  operator != "") {
+    //     displayValue = displayValue
+    // }
+    display.textContent = displayValue
+})
+
+
+percentage.addEventListener("click", function () {
+    if (firstValue != "") {
+        displayValue = firstValue / 100
+        firstValue = displayValue
+    }
+    display.textContent= displayValue
+})
+
+clear.addEventListener("click", function () {
+    display.innerHTML = 0
+
+     firstValue = " ";
+     isFirstValue = false;
+     secondValue = " ";
+     isSecondValue = false;
+     operator = " ";
+     displayValue = 0;
 
 })
+
+
 
 function multiplication(a, b) {
     const answer = a * b;
@@ -112,61 +149,10 @@ function addition(a, b) {
 
 function division(a, b) {
     const answer = a / b;
-    // const decimalIndex = answer.toString();
-    // const indexOfDecimal = decimalIndex.indexOf(".");
-    // if (indexOfDecimal !== -1) {
-    //     const decimalPlaces = decimalIndex.length - 1 - indexOfDecimal;
-    //     if (decimalPlaces >= 9) {
-    //         const backToNum = parseFloat(decimalIndex);
-    //         const roundedAnswer = backToNum.toFixed(9)
-    //         return roundedAnswer;
-    //     } else {
-    //         const backToNum = parseFloat(decimalIndex);
-    //     return backToNum;
-    //     }
-    // } else {
-    //     const backToNum = parseInt(decimalIndex);
-    //     return backToNum;
-    // }
     return answer;
 }
 
 function perc(a) {
     const answer = a / 100;
-    // const decimalIndex = answer.toString();
-    // const indexOfDecimal = decimalIndex.indexOf(".");
-    // if (indexOfDecimal !== -1) {
-    //     const decimalPlaces = decimalIndex.length - 1 - indexOfDecimal;
-    //     if (decimalPlaces >= 9) {
-    //         const backToNum = parseFloat(decimalIndex);
-    //         const roundedAnswer = backToNum.toFixed(9)
-    //         return roundedAnswer + "%";
-    //     } else {
-    //         const backToNum = parseFloat(decimalIndex);
-    //     return backToNum + "%";
-    //     }
-    // } else {
-    //     const backToNum = parseInt(decimalIndex);
-    //     return backToNum + "%";
-    // }
     return answer;
 }
-
-// function calc(a, b, params) {
-//     if (params === mult) {
-//         return mult(a, b);
-//     } else if(params === subt){
-//         return subt(a, b);
-//     } else if(params === addit){
-//         return addit(a, b);
-//     } else if(params === divi){
-//         return divi(a, b);
-//     } else if(params === perc){
-//         return perc(a);
-//     }else {
-//        return "Non Valid Input" 
-//     } 
-// }
-
-// currentResult = calc(10, 2, perc);
-// console.log(currentResult)
