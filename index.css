@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
-    background-color: black;
+    background-color: white;
     font-size: 1.3em;
     font-weight: bold;
 }
@@ -18,11 +18,12 @@ body {
 .main-container {
     background-color: black;
     min-height: 90%;
-    width: 20%;
-    margin: 0 auto;
+    width: 22%;
+    margin: 30px auto;
     text-align: center;
     color: white;
     padding: 5px 3px;
+    border-radius: 10px;
 }
 
 header {
@@ -59,6 +60,7 @@ header {
     font-size: 2em;
     text-align: right;
     font-weight: normal;
+    padding-right: 15px;
 }
 
 .top-buttons {
@@ -139,11 +141,6 @@ header {
     border-bottom: 3px solid white;
 }
 
-@media screen and (max-width: 1450px) {
-    .main-container {
-        width: 25%;
-    }
-}
 
 @media screen and (max-width: 1250px) {
     .main-container {
@@ -154,12 +151,17 @@ header {
 @media screen and (max-width: 980px) {
     .main-container {
         width: 35%;
+        min-width: 35%;
     }
 }
 
 @media screen and (max-width: 780px) {
     .main-container {
         width: 44%;
+    }
+
+    body {
+        background-color: black;
     }
 }
 
@@ -171,27 +173,14 @@ header {
 
 @media screen and (max-width: 500px) {
     .main-container {
-        width: 70%;
+        width: 75%;
     }
 }
 
 @media screen and (max-width: 410px) {
     .main-container {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .main-container {
-        width: 90%;
-        max-height: 100%;
+        width: 95%;
         margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .main-container {
-        width: 100%;
     }
 }
 
