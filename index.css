@@ -150,14 +150,14 @@ header {
 
 @media screen and (max-width: 980px) {
     .main-container {
-        width: 35%;
+        width: 40%;
         min-width: 35%;
     }
 }
 
 @media screen and (max-width: 780px) {
     .main-container {
-        width: 44%;
+        width: 54%;
     }
 
     body {
@@ -167,19 +167,20 @@ header {
 
 @media screen and (max-width: 600px) {
     .main-container {
-        width: 55%;
+        width: 65%;
+        margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 500px) {
     .main-container {
-        width: 75%;
+        width: 85%;
     }
 }
 
 @media screen and (max-width: 410px) {
     .main-container {
-        width: 95%;
+        width: 100%;
         margin: 0 auto;
     }
 }
