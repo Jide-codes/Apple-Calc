@@ -181,7 +181,6 @@ header {
 @media screen and (max-width: 410px) {
     .main-container {
         width: 100%;
-        margin: 0 auto;
     }
 }
 
